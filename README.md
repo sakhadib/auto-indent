@@ -1,9 +1,5 @@
 # Auto Indent - Smart Code Formatting for VS Code
 
-[![VS Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/your-username.auto-indent?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=your-username.auto-indent)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/your-username.auto-indent?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=your-username.auto-indent)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/your-username.auto-indent?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=your-username.auto-indent)
-
 A lightweight VS Code extension that automatically fixes code indentation for any programming language while respecting your editor preferences.
 
 ![Demo](https://via.placeholder.com/800x400.png?text=Indentation+Fix+Demo+GIF+Placeholder)
