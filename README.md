@@ -47,7 +47,7 @@ The extension automatically uses your VS Code settings:
     "editor.insertSpaces": true,
     "editor.detectIndentation": true
 }
-
+```
 
 ## Contributing 🤝
 
