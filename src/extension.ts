@@ -7,10 +7,10 @@ export function activate(context: vscode.ExtensionContext) {
             if (!editor) return;
 
             const document = editor.document;
-            const selections = editor.selections;
 
             try {
                 await normalizeWhitespace(editor);
+                await fixBracePositions(editor);
                 await reindentCode(editor);
                 vscode.window.showInformationMessage('Indentation fixed successfully');
             } catch (error) {
@@ -44,6 +44,28 @@ async function normalizeWhitespace(editor: vscode.TextEditor) {
                     textLine.range.start.translate(0, whitespace.length)
                 );
                 editBuilder.replace(range, normalized);
+            }
+        }
+    });
+}
+
+async function fixBracePositions(editor: vscode.TextEditor) {
+    const doc = editor.document;
+    await editor.edit(editBuilder => {
+        for (let line = 0; line < doc.lineCount - 1; line++) {
+            const textLine = doc.lineAt(line);
+            const nextLine = doc.lineAt(line + 1);
+            
+            // Match function definitions and misplaced opening braces
+            if (/\b(?:class|struct|if|else|for|while|switch|do|namespace|int|void|float|double|char|bool|string)\s+\w+.*\)\s*\{/.test(textLine.text)) {
+                const updatedText = textLine.text.replace(/\s*\{\s*$/, '');
+                editBuilder.replace(textLine.range, updatedText);
+                editBuilder.insert(new vscode.Position(line + 1, 0), '{\n');
+            }
+            
+            // Match improperly indented closing braces
+            if (/^\s*\}/.test(nextLine.text)) {
+                editBuilder.replace(nextLine.range, '}');
             }
         }
     });
