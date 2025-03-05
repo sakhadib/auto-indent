@@ -14,7 +14,8 @@ export function activate(context: vscode.ExtensionContext) {
                 await addWhitespaceBeforeBlocks(editor);
                 await addWhitespaceBeforeTypes(editor);
                 await reindentCode(editor);
-                vscode.window.showInformationMessage('Indentation fixed successfully');
+
+                vscode.window.showInformationMessage('Formatted Successfully');
             } catch (error) {
                 vscode.window.showErrorMessage('Failed to fix indentation: ' + error);
             }
