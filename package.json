@@ -29,6 +29,7 @@
         "when": "editorTextFocus"
       }
     ]
+
   },
   "repository": {
     "type": "git",
