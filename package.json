@@ -2,8 +2,14 @@
   "name": "auto-indent",
   "displayName": "auto-indent",
   "description": "",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "publisher": "sakhadib",
+  "author": {
+    "name": "Adib Sakhawat",
+    "email": "sakhadib@gmail.com",
+    "url": "https://sakhawatadib.com"
+  },
+  "homepage": "https://github.com/sakhadib/auto-indent.git",
   "engines": {
     "vscode": "^1.97.0"
   },

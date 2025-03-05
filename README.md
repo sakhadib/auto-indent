@@ -4,12 +4,26 @@ A lightweight VS Code extension that automatically fixes code indentation for an
 
 ## Features ✨
 
-- 🧹 **Automatic Indentation Correction** for entire files or selected text
-- 🌐 **Language Agnostic** - Works with any programming language
-- ⚙️ **Configurable** - Respects VS Code indentation settings (spaces/tabs, tab size)
-- 📋 **Smart Format Preservation** - Maintains meaningful alignment
-- 🚀 **Instant Feedback** - Success/error notifications
-- ⌨️ **Keyboard Shortcut** - Quick formatting with `Ctrl+Alt+I` / `Cmd+Opt+I`
+- **Smart Indentation**: Automatically adjusts the indentation of your code based on your editor settings.
+- **Multi-Language Support**: Works with any programming language that VS Code supports.
+- **Batch Formatting**: Format multiple selections at once.
+- **Customizable**: Uses your editor settings for tab size, spaces, and indentation detection.
+- **Lightweight**: No external dependencies or complex configurations.
+- **Cross-Platform**: Works on Windows, macOS, and Linux.
+- **Open Source**: [MIT License](LICENSE)
+- **Privacy-Focused**: No data collection or telemetry.
+
+## Functionality 🚀
+
+1. Indent your code based on your editor settings:
+   - Tab size
+   - Insert spaces
+   - Detect indentation
+2. Detects missplaced brackets, braces, and parentheses and fixes them.
+3. Add white lines between code blocks for better readability after
+   - blocks of code like `if`, `else`, `for`, `while`, `switch`, etc.
+   - function definitions
+   - class definitions
 
 ## Installation 📦
 
@@ -46,6 +60,68 @@ The extension automatically uses your VS Code settings:
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.detectIndentation": true
+}
+```
+
+## Demo 🎥
+
+A messy `C` code snippet before formatting:
+```c
+#include<stdio.h>
+int add(int a, int b){
+return a + b;
+}
+int Main(){
+int MyVariable = 5;
+float FloatingPointVariable = 3.14;
+for(int i=0; i<10; i++){
+printf("i = %d\n", i); 
+if(i==5){ 
+printf("i is 5\n");
+}
+}
+if(5>10){
+printf("5 is grater");
+}
+while(1){
+printf("Infinite loop\n");
+}
+}
+```
+
+after pressing `Ctrl+Alt+I`:
+```c
+#include<stdio.h>
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+int Main()
+{
+    int MyVariable = 5;
+    float FloatingPointVariable = 3.14;
+    
+    for(int i=0; i<10; i++)
+    {
+        printf("i = %d\n", i); 
+        
+        if(i==5)
+        {
+            printf("i is 5\n");
+        }
+    }
+    
+    if(5>10)
+    {
+        printf("5 is grater");
+    }
+    
+    while(1)
+    {
+        printf("Infinite loop\n");
+    }
 }
 ```
 
